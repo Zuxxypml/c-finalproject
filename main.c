@@ -36,8 +36,7 @@ int main(){
 	printf("2.) Account. \n");
 	printf("3.) Program guide manual. \n");
 	printf("4.) Exit program \n");
-	printf("\nChoice--> ");
-	scanf("%d", &choice);
+	choice = scanint("\nChoice--> ");
 	     switch(choice){
         case 1 :  //add product
                 viewShops();
@@ -52,11 +51,11 @@ int main(){
             exit(0);
             break;
 		 default :
-                printf("Your choice is wrong please try again");
+                printf("Your choice is wrong please try again \n");
             break;
       };
-  }while(choice!=8); // infinite loop until the user will choose number8 .
-  printf("Thankyou for using this program\n");
+  }while(choice!=4); // infinite loop until the user will choose number8 .
+  printf("Thank you for using this program\n");
   return 0;
 }
 
@@ -93,7 +92,7 @@ int choice;
                 printf("Your choice is wrong please try again");
             break;
       };
-  }while(choice!=3); // infinite loop until the user will choose number8 .
+  }while(choice!=3); // infinite loop until the user will choose number 3 .
   return main();
 }
 //Shops function
@@ -128,7 +127,7 @@ int choice;
                 printf("Your choice is wrong please try again \n");
             break;
       };
-  }while(choice!=4); // infinite loop until the user will choose number8 .
+  }while(choice!=4); // infinite loop until the user will choose number4 .
   return main();
 }
 //Function to check if user didnt input an int
@@ -169,15 +168,13 @@ int amazon(void)
     do {
         //C is 1 by default
         if (c == 1) {
-            printf("Enter\n1 - Computer Accessories\n2 - Shoes\n3 - Mobiles\nAny other number to exit\n");
-            scanf("%d", &choice);
+           choice = scanint("Enter\n1 - Computer Accessories\n2 - Shoes\n3 - Mobiles\nAny other number to exit\n");
             switch (choice)
             {
             case 1:
             {
                 int accessoriesChoice;
-                printf("Enter\n1 - Sandisk 16 TB - $355\n2 - Logitech Mouse- $500\n3 - Pendrive 16 GB - $550\nAny other number to exit\n");
-                scanf("%d", &accessoriesChoice);
+                accessoriesChoice = scanint("Enter\n1 - Sandisk 16 TB - $355\n2 - Logitech Mouse- $500\n3 - Pendrive 16 GB - $550\nAny other number to exit\n");
                 cost[0] = 355;
                 cost[1] = 500;
                 cost[2] = 550;
@@ -186,8 +183,7 @@ int amazon(void)
                 case 1:
                 {
                     int num;
-                    printf("You chose Sandisk 16TB with $355.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num =scanint("You chose Sandisk 16TB with $355.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
                     if (num == 1)
                     {
                         a[0]++;
@@ -199,8 +195,8 @@ int amazon(void)
                 case 2:
                 {
                     int num;
-                    printf("You chose Logitech Mouse with $500.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose Logitech Mouse with $500.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[1]++;
@@ -212,8 +208,8 @@ int amazon(void)
                 case 3:
                 {
                     int num;
-                    printf("You chose Pendrive 16GB with $550.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose Pendrive 16GB with $550.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[2]++;
@@ -232,8 +228,8 @@ int amazon(void)
             case 2:
             {
                 int shoesChoice;
-                printf("Enter\n1 - Adidas - $3550\n2 - Nike - $5000\n3 - Leecooper - $2800\nAny other number to exit\n");
-                scanf("%d", &shoesChoice);
+                shoesChoice = scanint("Enter\n1 - Adidas - $3550\n2 - Nike - $5000\n3 - Leecooper - $2800\nAny other number to exit\n");
+
                 cost[3] = 3550;
                 cost[4] = 5000;
                 cost[5] = 2800;
@@ -242,8 +238,7 @@ int amazon(void)
                 case 1:
                 {
                     int num;
-                    printf("You chose Adidas Shoes for $3550.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose Adidas Shoes for $3550.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
                     if (num == 1)
                     {
                         a[3]++;
@@ -255,8 +250,7 @@ int amazon(void)
                 case 2:
                 {
                     int num;
-                    printf("You chose Nike Shoes for $5000.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose Nike Shoes for $5000.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
                     if (num == 1)
                     {
                         a[4]++;
@@ -268,8 +262,8 @@ int amazon(void)
                 case 3:
                 {
                     int num;
-                    printf("You chose Leecooper Shoes for $2800.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num= scanint("You chose Leecooper Shoes for $2800.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[5]++;
@@ -288,8 +282,7 @@ int amazon(void)
             case 3:
             {
                 int mobileChoice;
-                printf("Enter\n1 - Mi Note 3 -$11000\n2 - Nokia 3 - $9866\n3 - Samsung - $12800\nAny other number to exit\n");
-                scanf("%d", &mobileChoice);
+                mobileChoice = scanint("Enter\n1 - Mi Note 3 -$11000\n2 - Nokia 3 - $9866\n3 - Samsung - $12800\nAny other number to exit\n");
                 cost[6] = 11000;
                 cost[7] = 9866;
                 cost[8] = 12800;
@@ -311,8 +304,8 @@ int amazon(void)
                 case 2:
                 {
                     int num;
-                    printf("You chose to buy Nokia 3 for $9866.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose to buy Nokia 3 for $9866.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[7]++;
@@ -324,8 +317,7 @@ int amazon(void)
                 case 3:
                 {
                     int num;
-                    printf("You chose to buy Samsung s22 for $12800.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose to buy Samsung s22 for $12800.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
                     if (num == 1)
                     {
                         a[8]++;
@@ -363,8 +355,7 @@ int amazon(void)
         if (c == 2)
         {
             int id;
-            printf("Enter id to delete item\n");
-            scanf("%d", &id);
+            id = scanint("Enter id to delete item\n");
             if (id < 9 && id>0) {
                 totalCost = totalCost - (cost[id] * a[id]);
                 a[id] = 0;
@@ -382,8 +373,8 @@ int amazon(void)
                 }
             }
             printf("Total Cost\t\t\t\t\t%d\n", totalCost);
-            printf("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items \nAny other number to Exit\n");
-            scanf("%d", &c);
+            c = scanint("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items \nAny other number to Exit\n");
+
         }
 
     } while (c == 1 || c == 2);
@@ -399,6 +390,8 @@ int amazon(void)
     }
     printf("Thanks %s for Choosing Us and Visit us again.\n", name);
 }
+
+//End of AMAZON
 
 //X-Box
 
@@ -422,25 +415,23 @@ int xBox(void)
     do {
         //C is 1 by default
         if (c == 1) {
-            printf("Enter\n1 - X-box Games\n2 - X-box Consoles\n3 - X-box Accessories\nAny other number to exit\n");
-            scanf("%d", &choice);
+            choice = scanint("Enter\n1 - X-box Games\n2 - X-box Consoles\n3 - X-box Accessories\nAny other number to exit\n");
             switch (choice)
             {
             case 1:
             {
-                int accessoriesChoice;
-                printf("Enter\n1 - FIFA 2022 - $355\n2 - GTA V - $500\n3 - NBA 2K 22 - $550\nAny other number to exit\n");
-                scanf("%d", &accessoriesChoice);
+                int gameChoice;
+                gameChoice  = scanint("Enter\n1 - FIFA 2022 - $355\n2 - GTA V - $500\n3 - NBA 2K 22 - $550\nAny other number to exit\n");
+
                 cost[0] = 355;
                 cost[1] = 500;
                 cost[2] = 550;
-                switch (accessoriesChoice)
+                switch (gameChoice)
                 {
                 case 1:
                 {
                     int num;
-                    printf("You chose FIFA 2022 with $355.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose FIFA 2022 with $355.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
                     if (num == 1)
                     {
                         a[0]++;
@@ -452,8 +443,7 @@ int xBox(void)
                 case 2:
                 {
                     int num;
-                    printf("You chose GTA V with $500.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose GTA V with $500.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
                     if (num == 1)
                     {
                         a[1]++;
@@ -465,8 +455,7 @@ int xBox(void)
                 case 3:
                 {
                     int num;
-                    printf("You chose NBA 2K 22 with $550.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose NBA 2K 22 with $550.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
                     if (num == 1)
                     {
                         a[2]++;
@@ -484,19 +473,18 @@ int xBox(void)
             }
             case 2:
             {
-                int shoesChoice;
-                printf("Enter\n1 - X-box Series X - $3550\n2 - X-box Series S - $5000\n3 - X-box 360 - $2800\nAny other number to exit\n");
-                scanf("%d", &shoesChoice);
+                int consoleChoice;
+                consoleChoice = scanint("Enter\n1 - X-box Series X - $3550\n2 - X-box Series S - $5000\n3 - X-box 360 - $2800\nAny other number to exit\n");
+
                 cost[3] = 3550;
                 cost[4] = 5000;
                 cost[5] = 2800;
-                switch (shoesChoice)
+                switch (consoleChoice)
                 {
                 case 1:
                 {
                     int num;
-                    printf("You chose X-box Series X for $3550.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose X-box Series X for $3550.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
                     if (num == 1)
                     {
                         a[3]++;
@@ -508,8 +496,7 @@ int xBox(void)
                 case 2:
                 {
                     int num;
-                    printf("You chose X-box Series S for $5000.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose X-box Series S for $5000.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
                     if (num == 1)
                     {
                         a[4]++;
@@ -521,8 +508,8 @@ int xBox(void)
                 case 3:
                 {
                     int num;
-                    printf("You chose X-box 360 Shoes for $2800.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num= scanint("You chose X-box 360 Shoes for $2800.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[5]++;
@@ -540,19 +527,19 @@ int xBox(void)
             }
             case 3:
             {
-                int mobileChoice;
-                printf("Enter\n1 - X-box Stereo Headset -$11000\n2 - X-box Wireless Controller - $9866\n3 - X-box USB cable - $12800\nAny other number to exit\n");
-                scanf("%d", &mobileChoice);
+                int accessoriesChoice;
+                accessoriesChoice = scanint("Enter\n1 - X-box Stereo Headset -$11000\n2 - X-box Wireless Controller - $9866\n3 - X-box USB cable - $12800\nAny other number to exit\n");
+
                 cost[6] = 11000;
                 cost[7] = 9866;
                 cost[8] = 12800;
-                switch (mobileChoice)
+                switch (accessoriesChoice)
                 {
                 case 1:
                 {
                     int num;
-                    printf("You chose to buy X-box Stereo Headset for $11000.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose to buy X-box Stereo Headset for $11000.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[6]++;
@@ -564,8 +551,8 @@ int xBox(void)
                 case 2:
                 {
                     int num;
-                    printf("You chose to buy X-box Wireless Controller for $9866.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose to buy X-box Wireless Controller for $9866.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[7]++;
@@ -577,8 +564,8 @@ int xBox(void)
                 case 3:
                 {
                     int num;
-                    printf("You chose to buy X-box USB cable for $12800.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose to buy X-box USB cable for $12800.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[8]++;
@@ -610,14 +597,14 @@ int xBox(void)
                 }
             }
             printf("Total Cost\t\t\t\t\t%d\n", totalCost);
-            printf("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items \nAny other number to Exit\n");
-            scanf("%d", &c);
+            c = scanint("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items \nAny other number to Exit\n");
+
         }
         if (c == 2)
         {
             int id;
-            printf("Enter id to delete item\n");
-            scanf("%d", &id);
+            id = scanint("Enter id to delete item\n");
+
             if (id < 9 && id>0) {
                 totalCost = totalCost - (cost[id] * a[id]);
                 a[id] = 0;
@@ -635,8 +622,8 @@ int xBox(void)
                 }
             }
             printf("Total Cost\t\t\t\t\t%d\n", totalCost);
-            printf("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items \nAny other number to Exit\n");
-            scanf("%d", &c);
+            c = scanint("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items \nAny other number to Exit\n");
+
         }
 
     } while (c == 1 || c == 2);
@@ -675,25 +662,23 @@ int apple(void)
     do {
         //C is 1 by default
         if (c == 1) {
-            printf("Enter\n1 - iPhones\n2 -  iPads\n3 - Macbooks\nAny other number to exit\n");
-            scanf("%d", &choice);
+            choice = scanint("Enter\n1 - iPhones\n2 -  iPads\n3 - Macbooks\nAny other number to exit\n");
             switch (choice)
             {
             case 1:
             {
-                int accessoriesChoice;
-                printf("Enter\n1 - iPhone XR - $355\n2 - iPhone 12 Pro- $500\n3 - iPhone 13 - $550\nAny other number to exit\n");
-                scanf("%d", &accessoriesChoice);
+                int iPhoneChoice;
+                iPhoneChoice = scanint("Enter\n1 - iPhone XR - $355\n2 - iPhone 12 Pro- $500\n3 - iPhone 13 - $550\nAny other number to exit\n");
                 cost[0] = 355;
                 cost[1] = 500;
                 cost[2] = 550;
-                switch (accessoriesChoice)
+                switch (iPhoneChoice)
                 {
                 case 1:
                 {
                     int num;
-                    printf("You chose iPhone XR with $355.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose iPhone XR with $355.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[0]++;
@@ -705,8 +690,8 @@ int apple(void)
                 case 2:
                 {
                     int num;
-                    printf("You chose iPhone 12 Pro with $500.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose iPhone 12 Pro with $500.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[1]++;
@@ -718,8 +703,8 @@ int apple(void)
                 case 3:
                 {
                     int num;
-                    printf("You chose iPhone 13 with $550.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose iPhone 13 with $550.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[2]++;
@@ -737,19 +722,19 @@ int apple(void)
             }
             case 2:
             {
-                int shoesChoice;
-                printf("Enter\n1 - iPad Mini - $3550\n2 - iPad Pro - $5000\n3 - iPad Air - $2800\nAny other number to exit\n");
-                scanf("%d", &shoesChoice);
+                int iPadChoice;
+                iPadChoice = scanint("Enter\n1 - iPad Mini - $3550\n2 - iPad Pro - $5000\n3 - iPad Air - $2800\nAny other number to exit\n");
+
                 cost[3] = 3550;
                 cost[4] = 5000;
                 cost[5] = 2800;
-                switch (shoesChoice)
+                switch (iPadChoice)
                 {
                 case 1:
                 {
                     int num;
-                    printf("You chose iPad Mini for $3550.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose iPad Mini for $3550.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[3]++;
@@ -761,8 +746,8 @@ int apple(void)
                 case 2:
                 {
                     int num;
-                    printf("You chose iPad Pro for $5000.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose iPad Pro for $5000.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[4]++;
@@ -774,8 +759,8 @@ int apple(void)
                 case 3:
                 {
                     int num;
-                    printf("You chose iPad Air for $2800.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose iPad Air for $2800.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[5]++;
@@ -793,19 +778,19 @@ int apple(void)
             }
             case 3:
             {
-                int mobileChoice;
-                printf("Enter\n1 - Macbook Air -$11000\n2 -  Macbook Pro 13 - $9866\n3 - Macbook Pro 16 - $12800\nAny other number to exit\n");
-                scanf("%d", &mobileChoice);
+                int macChoice;
+                macChoice = scanint("Enter\n1 - Macbook Air -$11000\n2 -  Macbook Pro 13 - $9866\n3 - Macbook Pro 16 - $12800\nAny other number to exit\n");
+
                 cost[6] = 11000;
                 cost[7] = 9866;
                 cost[8] = 12800;
-                switch (mobileChoice)
+                switch (macChoice)
                 {
                 case 1:
                 {
                     int num;
-                    printf("You chose to buy Macbook Air for $11000.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num= scanint("You chose to buy Macbook Air for $11000.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[6]++;
@@ -817,8 +802,8 @@ int apple(void)
                 case 2:
                 {
                     int num;
-                    printf("You chose to buy Macbook pro 13 for $9866.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose to buy Macbook pro 13 for $9866.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[7]++;
@@ -830,8 +815,8 @@ int apple(void)
                 case 3:
                 {
                     int num;
-                    printf("You chose to buy Macbook pro 16 for $12800.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
-                    scanf("%d", &num);
+                    num = scanint("You chose to buy Macbook pro 16 for $12800.Are you sure to buy.If 'Yes' Enter 1 else any number\n");
+
                     if (num == 1)
                     {
                         a[8]++;
@@ -863,14 +848,14 @@ int apple(void)
                 }
             }
             printf("Total Cost\t\t\t\t\t%d\n", totalCost);
-            printf("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items \nAny other number to Exit\n");
-            scanf("%d", &c);
+            c = scanint("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items \nAny other number to Exit\n");
+
         }
         if (c == 2)
         {
             int id;
-            printf("Enter id to delete item\n");
-            scanf("%d", &id);
+            id = scanint("Enter id to delete item\n");
+
             if (id < 9 && id>0) {
                 totalCost = totalCost - (cost[id] * a[id]);
                 a[id] = 0;
@@ -888,8 +873,8 @@ int apple(void)
                 }
             }
             printf("Total Cost\t\t\t\t\t%d\n", totalCost);
-            printf("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items \nAny other number to Exit\n");
-            scanf("%d", &c);
+            c = scanint("If you wish to buy anything more Enter\n1 to Add Item\n2 to Delete Items \nAny other number to Exit\n");
+
         }
 
     } while (c == 1 || c == 2);
